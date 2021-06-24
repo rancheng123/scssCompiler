@@ -1,0 +1,33 @@
+div{
+  width: 100px;
+  height: 100px;
+  aa{
+    background: red;
+    cc{
+      background: red;
+    }
+  }
+  bb{
+    background: red;
+  }
+}
+
+
+div2{
+  background: blue;
+
+  child{
+    background: red;
+  }
+  child2{
+    background: red;
+  }
+
+  width: 100px;
+}
+
+
+
+
+
+aa{background: red; cc{background: red;}}     bb{cc{}}

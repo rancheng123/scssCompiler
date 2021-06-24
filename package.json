@@ -1,0 +1,11 @@
+{
+  "name": "nodeplugintest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rancheng <rancheng@zhibenyuan.cc>",
+  "license": "UNLICENSED"
+}
