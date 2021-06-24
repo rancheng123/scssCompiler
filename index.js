@@ -14,11 +14,8 @@ var reg = /(\w+(\s+)?\{)|(\})/g;
 
 class ScssParser {
     constructor(){
-
     }
-
     start(){
-
         //每次新建目录
         if (fs.existsSync(distPath)){
             var files = fs.readdirSync(distPath);
@@ -57,7 +54,7 @@ class ScssParser {
                 //测试 end
 
 
-               'a{   aChild{   }     aChild{   } }'
+
 
 
                 var contentString = content.toString()
@@ -96,9 +93,6 @@ class ScssParser {
                         //获取代码块
                         var blockCode = getBlockCode(startStr);
 
-
-
-
                         var newNode = {
                             parentNode: currentNode,
                             self: {
@@ -130,19 +124,7 @@ class ScssParser {
                     if (node.self.name){
 
 
-
-
-                        var array = [];
-                        getName(node);
-                        function getName(node){
-                            array.unshift(node.self.name)
-                            if (node.parentNode){
-                                getName(node.parentNode)
-                            }
-                        }
-
-
-                        var absoluteName = array.join(' ')
+                        var absoluteName = getAbsoluteName(node);
 
 
 
@@ -224,6 +206,18 @@ function getValue(blockCode){
         }
         return valueString;
     }
+}
+
+function getAbsoluteName(node){
+    var array = [];
+    getName(node);
+    function getName(node){
+        array.unshift(node.self.name)
+        if (node.parentNode){
+            getName(node.parentNode)
+        }
+    }
+    return array.join(' ')
 }
 
 
