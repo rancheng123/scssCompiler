@@ -1,8 +1,8 @@
 import "./a.scss";
-import "./a.js";
+import { aFn } from "./a.js";
 import "./b.js";
 
-
+aFn()
 alert(1)
 
 
