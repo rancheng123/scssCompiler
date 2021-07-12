@@ -56,6 +56,7 @@ class Webpack {
             fs.appendFileSync( config.output ,'')
 
 
+
             matches.forEach((match)=>{
                 var relativePath = match.match(/[\'\"][\.\/\w]+[\'\"]/)[0].replace(/[\'\"]/g,'')
 
@@ -113,6 +114,7 @@ class Webpack {
 
 process.on('exit',(code)=>{
     debugger;
+
 })
 process.on('uncaughtException', (err, origin) => {
     fs.writeSync(
